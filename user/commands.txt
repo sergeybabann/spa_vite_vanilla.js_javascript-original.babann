@@ -1,0 +1,9 @@
+npm run dev - запуск проекта в режиме разработки
+
+npm run build - сборка проекта
+
+----- snippets -----
+
+1) acspan 
+
+<span class="text__accent-padding"></span>

@@ -1,0 +1,69 @@
+@use './base/_variables' as *;
+@use './base/_reset';
+@use './base/_mixins';
+@use './base/_typography';
+
+@use './components/_button.scss';
+
+@use './layout/_header.scss';
+@use './layout/_header2.scss';
+@use 'layout/_main.scss';
+@use './layout/_sidebar2.scss';
+@use './layout/_footer.scss';
+
+@use './fonts';
+@use './layout/tables';
+
+// Глобальные стили
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-text-default;
+  background-color: $bg-dark-default;
+  color: $color-content-primary;
+  line-height: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul,
+ol {
+  padding: 0 50px 0 50px;
+  line-height: 2.5rem;
+}
+
+p {
+  line-height: 2rem;
+  margin: 5px 0 0 0;
+}
+
+video {
+  margin: 50px 200px 0 200px;
+}
+
+//*----- Плавная прокрутка якорей -----*//
+html {
+  scroll-behavior: smooth;
+}
+
+//* ---- Отступ для якорей -----*//
+:target {
+  scroll-margin-top: 220px; /* Отступ сверху */
+  display: block;
+}
+
+:root {
+  --header-height: 150px;
+}
+
+//* настройки для отступов header и main *//
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+}
+
+main {
+  margin-top: var(--header-height);
+}

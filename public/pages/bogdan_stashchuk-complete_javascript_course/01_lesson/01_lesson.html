@@ -1,0 +1,374 @@
+<!----- Header content ----->
+<div class="header2__content">
+    <!----- HEADER2 WRAPPER-1 ----->
+    <div class="header2__wrapper-1">
+        <!----- Bread Crumbs ----->
+        <div class="header2__bread-crumbs">
+            <a href="/" class="back-link main__link-default">Home</a>
+            <a href="/bogdan_stashchuk-complete_javascript_course" class="back-link main__link-default">Богдан Сташчук.
+                Полный курс JavaScript</a>
+        </div><!--bread-crumbs-->
+    </div><!--header__wrapper-1-->
+</div><!--header content -->
+
+<!----- MAIN ----->
+<div class="margin__main">
+    <div class="main">
+        <div class="main__wrapper-1">
+            <h1 class="main__title-1">Урок 1: Самое важное в JavaScript</h1>
+
+            <h class="main__title-3">Самое важное в JavaScript это - функции, выражения, объекты</h>
+            <p>
+                Главная идея в JavaScript в том, что практически все сущности в JavaScript это - объекты. Объект это -
+                набор свойств, имя:значение, либо пара имя:значение. Имена еще называют ключами.
+            </p>
+
+            <p>Пример объекта</p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 // example object
+
+    {
+        visible: true,
+        colorDepth: 24,
+        title: 'My image',
+        Orientation: {
+            angle: 0,
+            type: 'landscape'
+        },
+        pixelDepth: 24,
+        width: 1440
+    }
+                </code>
+            </pre>
+
+
+            <ul>
+                <li>Массив это - объект</li>
+                <li>Функция это - объект</li>
+                <li>Число это - объект</li>
+                <li>Строка это - объект</li>
+            </ul>
+
+            <p>
+                Числа и строки ведут себя как объекты. Значения такие как число и строка это примитивные значения.
+                Объект это набор свойств, и у свойств есть свои значения.
+            </p>
+
+
+            <h class="main__title-3">Что такое console.log ?</h>
+
+            <p>
+                <span class="text__accent-padding">console.log('Hello world')</span> - это выражение
+            </p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 console.log('Hello world')
+                </code>
+            </pre>
+
+            <p>
+            <ul>
+                <li>
+                    <span class="text__accent-padding">console</span>
+                    - это объект. У объекта есть свойства. У каждого свойства есть пара - ключ:значение.
+                </li>
+                <li>
+                    <span class="text__accent-padding">log</span>
+                    - это метод. Метод это функция, которая является значением одного из свойств объекта.
+                </li>
+                <li>точка между <span class="text__accent-padding">console</span> и
+                    <span class="text__accent-padding">log</span>
+                    - это синтаксис JavaScript, который называется точечная запись. С помощью
+                    точечной записи можно получать доступ к свойствам объектов. В данном случае в
+                    <span class="text__accent-padding">console.log('Hello
+                        world')</span>
+                    мы получаем доступ к методу объекта. Метод называется
+                    <span class="text__accent-padding">log</span>
+                </li>
+                <li>Скобки это вызов метода. Это также часть синтаксиса JavaScript. Поставив скобки после
+                    <span class="text__accent-padding">log</span>
+                    , мы
+                    говорим, что мы хотим вызвать эту функцию, которая является методом объекта
+                    <span class="text__accent-padding">console</span>.
+                </li>
+                <li>
+                    <span class="text__accent-padding">('Hello world')</span>
+                    - Внутри вызова метода находится аргумент, и в данном примере это просто значение
+                    типа - строка(string)
+                </li>
+            </ul>
+            </p>
+
+            <p class="main__span-accent_text-1">метод dir</p>
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 console.dir()
+                </code>
+            </pre>
+
+            <p>Кроме метода
+                <span class="text__accent-padding">log</span>
+                у объекта
+                <span class="text__accent-padding">console</span>
+                есть такой метод как
+                <span class="text__accent-padding">dir</span>
+                И с помощью этого метода можно отобразить в
+                консоли все свойства того или иного объекта. Например с помощью
+                <span class="text__accent-padding">console.dir</span>
+                можно увидеть, что любая
+                функция в JavaScript это объект, и увидеть все свойства этого объекта.
+            </p>
+
+            <p class="main__span-accent_text-1">метод table</p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 console.table()
+                </code>
+            </pre>
+
+            <p>
+                C помощью метода
+                <span class="text__accent-padding">table</span>
+                можно увидеть в консоли все свойства того или иного объекта, который передан в
+                этот метод как аргумент, который находится внутри скобок в табличном виде. То есть все свойства объекта
+                будут отображены в виде таблицы.
+            </p>
+
+            <span class="main__span-accent_text-1">Любое выражение возвращает значение</span>
+
+            <p>
+                В консоли браузера во вкладке
+                <span class="text__accent-padding">console</span>
+                наберем команду
+                <span class="text__accent-padding">console.log('Name')</span>
+                Нажимаем enter и получаем
+                следующий результат:
+                В консоли отображается Name, а также виден ответ от интерпретатора JavaScript - undefined<br>
+                Это результат этого выражения. Метод
+                <span class="text__accent-padding">log</span>
+                возвращает значение
+                <span class="text__accent-padding">undefined</span>
+                Если запустить это выражение в приложении terminal , то результат будет такой же.
+            </p>
+
+            <span class="main__span-accent_text-1">
+                <span class="text__accent-padding">console</span>
+                - это объект. Как это проверить? Можно написать
+                <span class="text__accent-padding">console</span>
+                в консоли браузера и нажать enter</span>
+
+            <p>
+                Консоль покажет ряд свойств этого объекта. Некоторые из этих свойств имеют функцию как значение, такие
+                свойства называются методами. Эти методы можно вызывать.
+                Найдем метод
+                <span class="text__accent-padding">log</span>
+                , и только что мы вызывали этот метод. Это метод обекта
+                <span class="text__accent-padding">console</span>
+            </p>
+
+            <span class="main__span-accent_text-1">Вызов функции это выражение.</span>
+
+            <p>
+                Почему это выражение? Потому, что вызов функции всегда возвращает значение. И в данном примере результат
+                вызова функции это значение
+                <span class="text__accent-padding">undefined</span>
+                Это то, что нам вернул метод
+                <span class="text__accent-padding">log</span>
+            </p>
+
+            <span class="main__title-3">Что такое выражение?</span>
+            <p>Любое выражение всегда возвращает значение.
+            </p>
+            <p>Вот некоторые примеры выражений:
+
+            <ul>
+                <li>
+                    <span class="text__accent-padding"> 'abc' </span>
+                    строка
+                </li>
+                <li>
+                    <span class="text__accent-padding">10</span> число
+                </li>
+                <li>
+                    <span class="text__accent-padding">5 + 2</span>
+                    выражение с использованием оператора
+                    <span class="text__accent-padding">+</span>, и результатом такого выражения будет число
+                    <span class="text__accent-padding">7</span>
+                </li>
+                <li>
+                    <span class="text__accent-padding">c = 10 </span>
+                    Переменной
+                    <span class="text__accent-padding">c</span>
+                    присваивается число
+                    <span class="text__accent-padding">10</span>
+                    Результатом этого выражения будет то значение,
+                    которое присвоено переменной. В данном примере это значение
+                    <span class="text__accent-padding">10</span>
+                </li>
+                <li>
+                    <span class="text__accent-padding">'Good' + 'Evening'</span>
+                    Конкатенация строк с помощью оператора
+                    <span class="text__accent-padding">+</span>
+                    , результатом этого выражения будет одна строка
+                </li>
+                <li>
+                    <span class="text__accent-padding">a &lt;= b || c !==d</span>
+                    Выражение с несколькими операторами.
+                </li>
+                <li>
+                    <span class="text__accent-padding">||</span>
+                    оператор "или"
+                </li>
+                <li> <span class="text__accent-padding">!==</span>
+                    оператор "не равно"</li>
+                <li>
+                    <span class="text__accent-padding"> &lt;=</span>
+                    оператор "меньше либо равно"
+                </li>
+                <li>
+                    <span class="text__accent-padding">myFunction(c,d)</span>
+                    Вызов функции. В этом примере вызов функции
+                    <span class="text__accent-padding">myFunction</span>
+                    с аргументами
+                    <span class="text__accent-padding">c</span>
+                    и
+                    <span class="text__accent-padding">d</span>
+                </li>
+            </ul>
+            </p>
+
+            <span class="main__span-accent_text-1">Примеры выражений с результатами:</span>
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                'abc' // Результат выражения: abc
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 10 // Результат выражения: 10
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 a + b // Результат выражения: сумма 'a' и 'b'
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 'Good ' + 'Evening' // Результат выражения: 'Good Evening' (новая строка)
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 a &lt;= b || c !==d // Результат выражения: true или false
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 myFunction(c,d) // Результат выражения: Результат функции.
+
+                // То, что возвращает функция в конце выполнения.
+                </code>
+            </pre>
+
+            <span class="main__span-accent_text-1">Выражение присваивания</span>
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 a = 20 // выражение присваивания
+                </code>
+            </pre>
+
+            <span class="main__span-accent_text-1">Выражения с побочными действиями</span>
+            <p>Выражение с побочными действиями не только возвращает значение, но и выполняет другие действия.</p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 a = 5
+                </code>
+            </pre>
+
+            <p>Кроме возвращения значения, значение <span class="text__accent-padding">5</span>, приведет к выполнению
+                еще другого действия.
+                Побочное действие - значение <span class="text__accent-padding">5</span> будет присвоено перменной
+                <span class="text__accent-padding">a</span>
+                Позже в коде можно будет обратиться к этой переменой и прочесть это значение. То есть были выполнены
+                какие-то действия, кроме возврата значения этого выражения.
+            </p>
+
+            <span class="main__span-accent_text-1">Увеличение значения на единицу</span>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 b++
+                </code>
+            </pre>
+
+            <p>В этом выражении используется оператор
+                <span class="text__accent-padding">++</span>
+
+                Этот оператор увеличивает значение переменной на единицу. Например, если переменная
+                <span class="text__accent-padding">b</span>
+                содержала цифру
+                <span class="text__accent-padding">6</span>,
+                то после применения к ней оператора
+                <span class="text__accent-padding">++</span>
+                значение этой переменной будет увеличино на единицу и будет
+                равняться цифре <span class="text__accent-padding">7</span>
+                Это выражение вернет цифру
+                <span class="text__accent-padding">7</span>
+                , и кроме этого значение переменой
+                <span class="text__accent-padding">b</span>
+                увеличится на единицу, то есть будет
+                выполнено другое побочное действие.
+                Побочное действие - увеличение значения переменной
+                <span class="text__accent-padding">b</span>
+                на единицу.
+            </p>
+
+            <span class="main__span-accent_text-1">В этом примере мы видим вызов функции</span>
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 myFunction(c,d)   
+                </code>
+            </pre>
+            <p>Внутри функции мы можем выполнять различные действия. Внутри функции выполняются другие побочные
+                действия, кроме возврата значения. И так как это выражение, то функция возвращает значение.</p>
+
+            <h class="main__title-3"></h>
+
+            <p></p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                 
+                </code>
+            </pre>
+
+
+        </div><!--main__wrapper-1-->
+    </div><!--main-->
+</div><!--margin__main-->
