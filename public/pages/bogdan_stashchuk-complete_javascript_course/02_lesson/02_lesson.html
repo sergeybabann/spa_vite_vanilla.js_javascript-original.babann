@@ -19,6 +19,242 @@
 
             <h class="main__title-3">Переменные</h>
 
+            <p>
+                Переменные дают возможность повторного доступа к значениям, которые присвоены этим переменным.
+            </p>
+
+            <span class="main__span-accent_text-1">
+                Именование переменных. Существует 3 подхода к именованию переменных в JavaScript
+            </span>
+
+            <ul>
+                <li>
+                    <span class="text__accent-padding">PascalCase</span>
+                    - используется для того, чтобы называть типы и классы в JavaScript. Например есть такой класс как
+                    объект, либо <span class="text__accent-padding">array(массив)</span> , они начинаются с заглавной
+                    буквы. Потому, что с помощью классов создаются экземпляры классов.
+                </li>
+                <li><span class="text__accent-padding">DB_PASSWORD</span>
+                    - Такой подход к названию переменных используется тогда, когда значения, которые мы присваиваем
+                    переменным известны до запуска приложения и не меняются на протяжении работы приложения. Такие
+                    значения можно сказать константы. Например, такой переменной можно присвоить значение пароля или
+                    логина для доступа в базу данных.
+                    <span class="text__accent-padding">DB_PASSWORD</span>
+                    <span class="text__accent-padding">DB_USER</span>
+                    и т.д.
+                </li>
+                <li>
+                    <span class="text__accent-padding">camelCase</span>
+                    - такое именование переменных рекомендуется использовать во всех остальных случаях, и используется
+                    чаще всего.
+                </li>
+            </ul>
+
+            <p>
+                Названия переменных должны быть понятными. В самом названии должна быть заключена информация относящаяся
+                к сущности переменной. Например:
+
+                <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                myName = "Сергей"<br>
+                myEmail = "sergeybabann@yandex.ru"
+                </code>
+            </pre>
+
+            Лучше использовать название более длинным и понятным.
+            </p>
+
+            <h3 class="main__title-3">Объявление переменных</h3>
+
+            <span class="main__span-accent_text-1">В JavaScript есть 3 ключевых слова с помощью которых объявляются
+                переменные:</span>
+            <ul>
+                <li>let</li>
+                <li>const</li>
+                <li>var</li>
+            </ul>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                let a // Объявление переменной с названием a
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                const с = 10 // Объявление переменой с и присваивание ей значения 10
+                </code>
+            </pre>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                a = true // Присваивание значения переменной
+                </code>
+            </pre>
+
+            <p>
+                Переменной типа <span class="text__accent-padding">let</span> можно присваивать новые значения, чего
+                нельзя делать для переменной типа <span class="text__accent-padding">const</span><br>
+                Переменной типа <span class="text__accent-padding">const</span> должно быть присвоено значение сразу же
+                при ее объявлении:
+            </p>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                const c = 10
+                </code>
+            </pre>
+
+            <span class="main__span-accent_text-1">Переприсваивание значения переменной</span>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                let a = 10 // объявление переменной a и присваивание ей значения 10
+                a = 20 /* присваивание нового значения переменной a, которая была объявлена ранее
+                (новое значение число 20) */
+                </code>
+            </pre>
+
+            <span class="main__span-accent_text-1">Объявление переменной, и присваивание ей значение позже</span>
+
+            <!---------- DEMO CODE ---------->
+            <pre class="code__example-block">
+                <code>
+                let b // объявление переменной b
+                b = false // присваивание переменной b значения false 
+                </code>
+            </pre>
+
+            <p>
+                Присваивание значения переменной происходит не сразу, а позже. Значение переменной
+                <span class="text__accent-padding">b</span> будет <span class="text__accent-padding">undefined</span>,
+                так как переменная объявлена, но никакого значения ей не присвоено.
+            </p>
+
+            <span class="main__span-accent_text-1">Ошибка переприсваивания значения переменной типа
+                <span class="text__accent-padding">const</span>
+            </span>
+
+            <pre class="code__example-block"><code>
+                const c = 10 // присваивание значения 10 переменной c
+                c = 20 // нельзя менять значение переменной типа const, в консоли будет ошибка
+            </code></pre>
+
+            <span class="main__span-accent_text-1">Вывод переменной в консоль до ее обявления</span>
+
+            <pre class="code__example-block"><code>
+                console.log(a) /* в консоли будет ошибка с текстом
+                script.js:1 Uncaught ReferenceError: a is not defined */
+            </code></pre>
+
+            <p>
+                В тексте ошибки говорится о том, что переменная не определена. Мы пытаемся получить доступ к значению
+                переменной, которой не существует. Она не была объявлена ранее. Для того, чтобы была возможность доступа
+                к значению переменной необходимо эту переменную сначала объявить.
+            </p>
+
+            <span class="main__span-accent_text-1">Объявление переменной и вывод ее в консоль</span>
+
+            <pre class="code__example-block"><code>
+                let a // объявление переменной a
+                console.log(a) // вывод переменной a в консоль  
+            </code></pre>
+
+            <p>
+                После объявления переменной <span class="text__accent-padding">a</span> вызываем
+                <span class="text__accent-padding">log</span> метод объекта <span
+                    class="text__accent-padding">console</span> ,
+                и передаем в качестве аргумента название переменной <span class="text__accent-padding">a</span> , и
+                получаем в результате <span class="text__accent-padding">undefined</span> потому, что
+                значение переменной <span class="text__accent-padding">a</span> после ее объявления будет
+                <span class="text__accent-padding">undefined</span> , так как мы еще не присвоили значение этой
+                переменной.
+            </p>
+
+            <span class="main__span-accent_text-1">Объявление переменной и присвоение ей значения</span>
+            <pre class="code__example-block"><code>
+                let a // объявление переменной a
+                a  = true // присвоение переменной a значения true  
+                console.log(a) // значение переменной true
+            </code></pre>
+
+            <h class="main__title-3">Примитивные типы</h>
+
+            <span class="main__span-accent_text-1">Типы переменных</span>
+            <p>
+                Тип переменной определяется типом присвоенного этой переменной значения
+            </p>
+            <pre class="code__example-block"><code>
+                const a = 10 // тип переменной число (number)
+            </code></pre>
+
+            <p>
+                <span class="text__accent-padding">10</span> - это число. Тип <span
+                    class="text__accent-padding">number</span> . Тип у этого значения - число, и когда мы присваиваем
+                такое значение переменной <span class="text__accent-padding">a</span> , то переменная
+                <span class="text__accent-padding">a</span> также будет иметь тип - число. Можно говорить, что
+                переменная <span class="text__accent-padding">a</span> - это число.
+            </p>
+
+            <pre class="code__example-block"><code>
+                const b = 'abc' // тип переменной строка (string)
+            </code></pre>
+
+            <p>
+                Присваиваем переменной <span class="text__accent-padding">b</span> строку (string). Тип этой переменной
+                строка.
+                У переменной <span class="text__accent-padding">b</span> тип будет строка (string). Можно говорить, что
+                переменная <span class="text__accent-padding">b</span> - это строка. Она содержит значение типа -
+                строка.
+            </p>
+
+            <span class="main__span-accent_text-1">Примитивные типы</span>
+            <p>
+                Переменная имеет значение, значение имеет тип. То есть переменная имеет тип, после того как, мы
+                присвоили переменной определенное значение. В JavaScript есть 6 примитивных типов:
+            </p>
+
+            <ul>
+                <li>string (строка)</li>
+                <li>boolean (логический), у него есть 2 значения: true и false</li>
+                <li>number (число), у него значения это числа</li>
+                <li>null, у него есть только одно значение - это null. Это значение используется тогда, когда мы явно
+                    хотим указать, что у какой-то переменной на данный момент значение отсутствует. Но мы явно это
+                    указываем самостоятельно. Мы можем присвоить значение null той или иной переменной.</li>
+                <li>undefined (значения нет, не существует), у него есть одно значение - undefined. Разница между null и
+                    undefined в том, что null присваивается именно мной самим той или иной переменной. Подразумевается,
+                    что значения для переменной пока нет, и возможно оно будет присвоено позже.</li>
+                <li>symbol (символ), с помощью такого типа можно создавать уникальные значения.</li>
+            </ul>
+
+            <span class="main__span-accent_text-1">Ссылочный тип</span>
+
+
+            <p>Он всего один, и называется он <span class="text__accent-padding">object</span> (объект)</p>
+
+            <p>Когда мы присваиваем одно из этих 4-ех значений примитивных типов какой-либо переменной, то в памяти
+                компьютера эти переменные будут непосредственно содержать значения. Потому эти типы называются
+                примитивные:</p>
+
+            <ul>
+                <li>'Hello, world!'</li>
+                <li>undefined</li>
+                <li>true</li>
+                <li>25</li>
+            </ul>
+
+
+            <h class="main__title-3">Ссылочный тип</h>
+            <span class="main__span-accent_text-1">Ссылочный тип это объект</span>
+
+
+
         </div><!--main__wrapper-1-->
     </div><!--main-->
 </div><!--margin__main-->

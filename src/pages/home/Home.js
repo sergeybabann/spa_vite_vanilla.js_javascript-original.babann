@@ -30,7 +30,7 @@ export default function Home() {
         <h3 id="programming_basics" class="main__title-1">Богдан Сташчук Полный курс JavaScript</h3>
         <ul class="main__list-1">
             <li class="main__list-1-item"><a href="/bogdan_stashchuk-complete_javascript_course" class="main__link-default">
-            Полный Курс JavaScript.
+            Богдан Сташчук Полный Курс JavaScript
             </a></li> 
         </ul>
 
@@ -94,17 +94,17 @@ export default function Home() {
                 </div>
                 
                 <ul class="sidebar2__list">
-                <!----- Основы программирования ----->
+                <!----- Богдан Сташчук Полный курс JavaScript ----->
                     <li class="sidebar2__item">
                     <a href="#programming_basics" class="sidebar2__link">
-                    Основы программирования</a></li>
+                    Богдан Сташчук Полный курс JavaScript</a></li>
 
-                    <!----- Алгоритмы и структуры данных ----->
+                    <!----- ITEM ----->
                     <li class="sidebar2__item">
                     <a href="#algorithms_and_data_structures" class="sidebar2__link">
-                    Алгоритмы и структуры данных
+                    ITEM
                     </a></li>
-                    <li class="sidebar2__item"><a class="sidebar2__link">LINK</a></li>
+                    <li class="sidebar2__item"><a class="sidebar2__link">ITEM</a></li>
                 </ul>
             </div><!--sidebar2-->
     `
