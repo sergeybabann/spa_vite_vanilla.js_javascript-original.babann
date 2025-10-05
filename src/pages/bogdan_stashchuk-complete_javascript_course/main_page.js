@@ -47,8 +47,8 @@ export default function lecture_Theme_01() {
 
         <!----- 03 LESSON ----->
         <li class="main__list-1-item">
-            <a class="main__link-default" href="/basic_of_programming_and_databases/03_lesson">
-            3. Урок - Процессоры
+            <a class="main__link-default" href="/bogdan_stashchuk-complete_javascript_course/03_lesson">
+            3. Урок - Объекты
             </a>
         </li>
 

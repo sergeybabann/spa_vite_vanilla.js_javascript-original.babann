@@ -5,8 +5,8 @@
         <!----- Bread Crumbs ----->
         <div class="header2__bread-crumbs">
             <a href="/" class="back-link main__link-default">Home</a>
-            <a href="/basic_of_programming_and_databases" class="back-link main__link-default">Основы программирования и
-                баз данных</a>
+            <a href="/bogdan_stashchuk-complete_javascript_course" class="back-link main__link-default">Богдан Сташчук.
+                Полный курс JavaScript</a>
         </div><!--bread-crumbs-->
     </div><!--header__wrapper-1-->
 </div><!--header content -->
@@ -15,57 +15,321 @@
 <div class="margin__main">
     <div class="main">
         <div class="main__wrapper-1">
-            <h1 class="main__title-1">Урок 3: Процессоры</h1>
+            <h1 class="main__title-1">Урок 3: Объекты</h1>
 
-            <h class="main__title-3">Современные микропроцессоры</h>
+            <h3 class="main__title-3">Объекты</h3>
 
             <p>
-                Процессор – это микросхема, которая выполняет всю логику, арифметику. Это сердце и мозг компьютера,
-                которые принимают данные , обрабатывает и выдает результат. Потом берет следующие, обрабатывает, выдает
-                результат. Потом берет те данные, которые были получены 2 шага назад, обрабатывает их, прибавляет к тем
-                данным, которые были получены 2 шага назад и программа выполняется.
+                У объектов есть свойства. Если какое-то свойство содержит функцию как значение, такое свойство
+                называется метод. Практически все сущности в JavaScript - это объекты. Объект - это набор свойств,
+                имя:значение. Объект - это тип значений, также тип переменных. То есть, если вы присваиваете значение
+                типа объект переменной, то можно сказать, что эта переменная является объектом. Либо ее тип это объект.
+                Объект также это ссылочный тип. Переменная, которой вы присваиваете объект содержит только ссылку на
+                объект, который находится в другом месте памяти компьютера.
+            </p>
+
+            <span class="main__span-accent_text-1">Объект и его структура</span>
+            <pre class="code__example-block"><code>
+                // объект
+                        const myCity = {
+                            city: 'New York',
+                            popular: true,
+                            country: 'USA'
+                        } 
+            </code></pre>
+
+            <p>
+                Объект записывается между фигурными скобками, в этом объекте 3 свойства:
+            <ul>
+                <li>city</li>
+                <li>popular</li>
+                <li>country</li>
+            </ul>
             </p>
 
             <p>
-                Любой процессор работает с какой-то скоростью. Частота процессора говорит о его скорости, скорости
-                выполнения операций за единицу времени. Скорости процессоров росли, но потом уперлись в потолок. Часть
-                энергии процессор тратит на движение электронов, а часть энергии рассеивается в виде тепла. По скольку
-                тепло стало препятствием для увеличения скорости процессора, и его нужно было бы как то отводить, то
-                стали применять технологию многопроцессорности. То есть многоядерные процессоры.
+                Справа после двоеточия вы видете значения соответствующих свойств. Пара ключ:значение разделяются
+                запятой. Справа значение свойства, а слева название свойства. В объекте рекомендуется применять <span
+                    class="text__accent-padding">const</span> ,
+                когда вы объявляете переменную, которая будет содержать объект как свое значение.
             </p>
 
-            <h class="main__title-3">Многоядерные процессоры</h>
+            <span class="main__span-accent_text-1">Порядок свойств в объекте не имеет значения:</span>
+            <pre class="code__example-block"><code>
+                // объект
+                        const myCity = {
+                            city: 'New York',
+                            popular: true,
+                            country: 'USA'
+                        }
+            </code></pre>
+
+            <pre class="code__example-block"><code>
+                // объект
+                        const myCity = {
+                            popular: true,
+                            city: 'New York',
+                            country: 'USA'
+                        }
+            </code></pre>
 
             <p>
-                В многоядерном процессоре чип 1(одна микросхема), но внутри нее размещено несколько процессоров. Их
-                называют процессорные ядра. 10-ти ядерный процессор – это по сути одна микросхема, и 10 процессоров (10
-                ядер).
+                Два объекта с одинаковыми свойствами, разница между ними лишь в том, что эти свойства идут в разных
+                порядках. В JavaScript эти 2 объекта технически одинаковые.
             </p>
 
-            <p>Как работает процессор:</p>
-
-            <p>
-                Допустим у меня однопроцессорная машина, мне нужно посчитать сумму чисел от 1 до 1000. Допустим
-                процессор делает одну операцию сложения за 1 секунду. На операции сложения процессор потратит 1000
-                секунд. Это долго. Если я хочу, чтобы это было быстрее, я могу взять 2 процессора и сказать – Вот ты
-                1-ый
-                процессор суммируешь от 1 до 500, а ты 2-ой процессор параллельно с тем (то есть одновременно) считаешь
-                от 500 до 1000. А потом просто складывается. И в этом случае эта задача будет решена не за 1000 секунд,
-                а за 500 секунд. В 2 раза быстрее. Параллельные алгоритмы именно про это. Есть некие задачи, которые вы
-                можете распараллелить, есть также задачи, которые распараллелить невозможно.
-            </p>
-
-            <p>
-                Параллельные алгоритмы и программирование очень актуально потому, что это увеличивает скорость. Если
-                ваша программа написана именно с использованием параллельных алгоритмов, то 10-ядерный процессор реально
-                принесет свое предназначение, и скорость будет намного выше.
-            </p>
+            <span class="main__span-accent_text-1">Папка 01. Получение значений свойств объекта:</span>
+            <pre class="code__example-block"><code>
+                // объект
+                        const myCity = {
+                            city: 'New York',
+                            popular: true,
+                            country: 'USA'
+                        } 
+                        
+                        console.log(myCity.city) // 'New York'
+                        
+                        console.log(myCity.popular) // true
+            </code></pre>
 
             <p>
-                Если программа написана программный код, допустим сложение чисел от 1 до 1000, то будет хоть 50 ядер, но
-                толку от них не будет, скорость не проявится. Компьютер сам не сможет это взять и раскидать на 50
-                ядер, чтобы скорость выполнения операций было в 50 раз быстрее. Это уже задача программиста.
+                Получать доступ к значениям свойств объекта можно при помощи точки после названия обекта. После метода
+                <span class="text__accent-padding">log</span> объекта <span class="text__accent-padding">console</span>
+                идут скобки, в них есть название объекта и название свойства объекта. Между ними
+                стоит точка. Название объекта - точка - название свойства объект. Этот синтаксис называется - точечная
+                запись. (dot notation)
             </p>
+
+            <span class="main__span-accent_text-1">Папка 02. Изменение значений свойств объекта</span>
+
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York',
+                        }
+                        
+                        myCity.city = 'Las Vegas'
+                        console.log(myCity)
+                        // {city: 'Las Vegas'}
+            </code></pre>
+
+            <p>
+                Используя точечную запись вы можете менять значения свойств объекта. Значение свойства <span
+                    class="text__accent-padding">myCity</span> сначала
+                было <span class="text__accent-padding">'New York'</span> , а затем стало<br> <span
+                    class="text__accent-padding">'Las Vegas'</span> ., при помощи оператора присваивания <span
+                    class="text__accent-padding">=</span> мы изменили значение этого свойства.
+            </p>
+
+            <h3 class="main__title-3">Создание и удаление свойств объектов</h3>
+            <span class="main__span-accent_text-1">Папка 01. Добавление новых свойств в объект</span>
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York'
+                        }
+                        
+                        myCity.popular = true // добавление нового свойства в объект 
+                        при помощи этого выражения
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true} 
+                        
+                        myCity.country = 'USA' // добавление нового свойства в объект 
+                        при помощи этого выражения
+                        
+                        console.log(myCity)
+                        // {city: 'New York', popular: true,  country: 'USA'}         
+            </code></pre>
+
+            <p>
+                Мы объявили переменную используя <span class="text__accent-padding">const</span> , присваивать новое
+                значение переменной, которая объявлена при
+                помощи <span class="text__accent-padding">const</span> нельзя. В этом примере мы изменяем объект,
+                объект, который является значением переменной <span class="text__accent-padding">myCity</span>. Сначала
+                у объекта было одно свойство - <span class="text__accent-padding">myCity</span> , а в итоге
+                других операций у объекта <span class="text__accent-padding">myCity</span>
+                будет уже 3 свойства: <span class="text__accent-padding">city, popular, country</span>
+            </p>
+
+            <span class="main__span-accent_text-1">Очень важный нюанс, который мы опишем подробно</span>
+            <p>
+                В данном примере мы не меняем значение переменной <span class="text__accent-padding">myCity</span> , то
+                есть мы не присваиваем ей новое значение.
+                Мы меняем объект, а сама переменная, как содержала ссылку на объект, так и содержит. Эта ссылка не
+                меняется. И это главное для <span class="text__accent-padding">const</span> , мы не присваиваем новое
+                значение, и значение переменной <span class="text__accent-padding">myCity</span> не
+                меняется. Все что мы делаем, мы переходим по ссылке в область памяти, где находится этот объект, и
+                меняем этот объект при помощи операций добавления новых свойств в объект, используя точечную запись.
+                Можно сказать мы мутируем этот объект, не меняя значение самой переменной <span
+                    class="text__accent-padding">myCity</span> .
+            </p>
+
+            <p>
+                Тем самым мы можем легко объявлять переменные типа - объект, используя <span
+                    class="text__accent-padding">const</span> , и смело менять содержимое
+                таких объектов. Добавлять и удалять новые свойства, менять их значения и так далее. Все это возможно
+                благодаря тому, что объект - это ссылочный тип в JavaScript.
+            </p>
+
+            <span class="main__span-accent_text-1">Папка 02. Удаление свойств из объекта</span>
+            <pre class="code__example-block"><code>
+                // объект
+                        const myCity = {
+                            city: 'New York',
+                            popular: true,
+                            country: 'USA'
+                        } 
+                        
+                        delete myCity.country // операция удаления свойства из объекта
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true} 
+            </code></pre>
+
+            <p>
+                <span class="text__accent-padding">delete</span> - Оператор удаления.
+                В данном примере в объекте <span class="text__accent-padding">myCity</span> есть 3 свойства.
+            </p>
+
+            <p>
+                Таким образом при помощи оператора <span class="text__accent-padding">delete</span>(оператора удаления)
+                мы удалили из объекта <span class="text__accent-padding">myCity</span> свойство
+                <span class="text__accent-padding">country</span> .
+                Выводим в консоль объект <span class="text__accent-padding">myCity</span> и увидим, что в объекте
+                осталось всего 2 свойства. При помощи данной операции мы можем удалять любое свойство из объекта.
+            </p>
+
+            <span class="main__span-accent_text-1">Папка 03. Доступ к значению свойства с использованием скобок. bracket
+                notation (скобочная запись)</span>
+
+            <pre class="code__example-block"><code>
+                    const myCity = {
+                            city: 'New York'
+                        }
+                        
+                        myCity['popular'] = true // добавление свойства в объект
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true}
+                        
+                        const countryPropertyName = 'country' 
+                        
+                        myCity[countryPropertyName] = 'USA'
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true, country: 'USA'}
+                </code></pre>
+
+            <p>
+                Кроме точечной записи, вы можете работать со свойствами объекта, используя квадратные скобки. В данном
+                примере тот же объект <span class="text__accent-padding">myCity</span>
+            </p>
+
+            <pre class="code__example-block"><code>
+                myCity['popular'] = true // добавление свойства в объект
+            </code></pre>
+
+            <p>
+                В скобках указывается свойство, которое вы хотите добавить, и оно заключено в кавычки. Выводим свойство
+                в консоль и видим в объекте 2 свойства.
+            </p>
+
+            <p>
+                Такой синтаксис с квадратными скобками используется в том случае, если название свойства является
+                значением той или иной переменной. И это указано в примере ниже:
+            </p>
+
+            <pre class="code__example-block"><code>
+                const countryPropertyName = 'country' 
+                        
+                myCity [countryPropertyName] = 'USA'
+            </code></pre>
+
+            <p>
+                Допустим вы создаете переменную, которая называется
+            </p>
+
+            <pre class="code__example-block"><code>
+                countryPropertyName = country
+            </code></pre>
+
+            <p>
+                Значение этой переменной - <span class="text__accent-padding">country</span>
+                И допустим вы хотите добавить новое свойство к объекту <span class="text__accent-padding">myCity</span>
+                , которое будет называться так, как значение переменной <span
+                    class="text__accent-padding">countryPropertyName</span> , и это значение в данном
+                случае - <span class="text__accent-padding">country</span> , и как раз в этом случае вам подойдет только
+                синтаксис с квадратными скобками.
+            </p>
+
+            <p>
+                Вы не можете написать выражение
+            </p>
+            <pre class="code__example-block"><code>
+                myCity.countryPropertyName
+            </code></pre>
+
+            <p>
+                Потому, что в таком случае создастся свойство, которое называется <span
+                    class="text__accent-padding">countryPropertyName</span> , нам же
+                необходимо создать свойство, которое называется <span class="text__accent-padding">country</span>
+            </p>
+
+            <p>
+                И мы пишем нужное нам выражение в котором сначала идет назание объекта, затем в квадратных скобках идет
+                название переменной:
+            </p>
+
+            <pre class="code__example-block"><code>
+                myCity[countryPropertyName] = 'USA'
+            </code></pre>
+
+            <p>
+                JavaScript сначала перед созданием нового свойства посмотрит какое значение у <span
+                    class="text__accent-padding">countryPropertyName</span> , а
+                значение у нас <span class="text__accent-padding">country</span> (смотрим пример ниже)
+            </p>
+
+            <pre class="code__example-block"><code>
+                const countryPropertyName = 'country' 
+                        
+                myCity[countryPropertyName] = 'USA'
+            </code></pre>
+
+            <p>
+                Именно с именем country создастся новое свойство, значение которого в данном случае будет <span
+                    class="text__accent-padding">'USA'</span>
+                Выводим этот объект в консоль, и увидим в объекте уже 3 свойства:
+            </p>
+
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York'
+                        }
+                        
+                        myCity['popular'] = true // добавление свойства в объект
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true}
+                        
+                        const countryPropertyName = 'country' 
+                        
+                        myCity[countryPropertyName] = 'USA'
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true, country: 'USA'}
+            </code></pre>
+
+            <p>Скобочная запись отличается от точечной записи тем, что в квадратных скобках вы можете по сути
+                использовать любое выражение JavaScript , в данном примере мы просто использовали название переменной,
+                содержащей строковое значение <span class="text__accent-padding">country</span> , и это же значение мы
+                добавляем уже как название нового свойства со значением <span class="text__accent-padding">'USA'</span>
+                ., и все это мы делаем при помощи скобочной записи bracket notation
+            </p>
+
+            <h3 class="main__title-3">Вложенные свойства</h3>
+
+
+
 
 
 

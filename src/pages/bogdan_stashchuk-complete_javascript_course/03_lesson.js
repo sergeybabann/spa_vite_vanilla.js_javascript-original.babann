@@ -4,7 +4,7 @@ export default async function Lesson_03() {
 
   try {
     const response = await fetch(
-      '/public/pages/basic_of_programming_and_databases/03_lesson/03_lesson.html'
+      '/public/pages/bogdan_stashchuk-complete_javascript_course/03_lesson/03_lesson.html'
     )
     const htmlContent = await response.text()
     lesson.innerHTML = htmlContent
