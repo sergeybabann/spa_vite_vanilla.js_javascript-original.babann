@@ -328,9 +328,492 @@
 
             <h3 class="main__title-3">Вложенные свойства</h3>
 
+            <p>
+                У объектов JavaScript могут быть вложенные свойства, которые содержат вложенные объекты. В данном
+                примере у объекта <span class="text__accent-padding">myCity</span> есть свойство <span
+                    class="text__accent-padding">info</span> , и значение этого свойства это - объект, который имеет
+                внутри свои 2 свойства:
+            <ul>
+                <li>isPopular</li>
+                <li>country</li>
+            </ul>
+            </p>
 
+            <span class="main__span-accent_text-1">Папка 01</span>
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York',
+                            info: {
+                                isPopular: true,
+                                country: 'USA'
+                            }
+                        }
+                        
+                        console.log(myCity.info.isPopular)
+                        // true
+                    </code></pre>
 
+            <p>
+                Такой объект называется вложенным объектом. И у этих свойств также могут быть объекты, как значения. Тем
+                самым вложенность может быть многоуровневая.
+            </p>
 
+            <p>
+                Например, если вы хотите получить доступ к свойству <span class="text__accent-padding">isPopular</span>
+                вложенного объекта <span class="text__accent-padding">info</span> , то вам необходимо
+                использовать теперь 2 точки для того, чтобы дойти по иерархии объекта до нужного значения. Смотрим
+                пример:
+            </p>
+
+            <pre class="code__example-block"><code>
+                console.log(myCity.info.isPopular) 
+                        // true
+            </code></pre>
+
+            <p>
+                И в консоли мы увидим <span class="text__accent-padding">true</span> ., значение свойства
+                <span class="text__accent-padding">isPopular</span>
+                Точно также можно удалять свойства, используя либо точечную запись, либо скобочную.
+            </p>
+
+            <span class="main__span-accent_text-1">Папка 02. Удаление свойства из объекта</span>
+            <p>
+                В примере ниже вы видете как при помощи оператора <span class="text__accent-padding">delete</span>
+                происходит удаление свойства <span class="text__accent-padding">isPopular</span> ,
+                которое находится в объекте <span class="text__accent-padding">info</span> ., К объекту
+                <span class="text__accent-padding">info</span> вы должны дойти через доступ с помощью точки
+                соответственно, и в квадратных скобках прописать нужное свойство для его удаления, заключенное в
+                кавычки.
+            </p>
+
+            <pre class="code__example-block"><code>
+                delete myCity.info['isPopular']
+            </code></pre>
+
+            <p>
+                И смотрим весь пример кода:
+            </p>
+
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York',
+                            info: {
+                                isPopular: true,
+                                country: 'USA'
+                            }
+                        }
+                        
+                        console.log(myCity.info.isPopular)
+                        // true
+                        
+                        delete myCity.info['isPopular']
+                        
+                        console.log(myCity)
+                        // {city: 'New York', info: {country: 'USA'}} 
+            </code></pre>
+
+            <span class="main__text-accent">Примечание!
+                Используйте скобочную запись только тогда, когда в скобках должнобыть какое-то выражение. Например
+                название переменной.
+            </span>
+
+            <h3 class="main__title-3">Сокращенный формат записи свойств</h3>
+
+            <span class="main__span-accent_text-1">Папка 01. Использование переменных при формировании объекта</span>
+            <pre class="code__example-block"><code>
+                const name = 'Bogdan'
+                const postsQty = 23    
+            </code></pre>
+
+            <p>
+                В данном примере (выше) у нас есть две переменные:
+                <span class="text__accent-padding">name</span>
+                и <span class="text__accent-padding">postsQty</span>
+            </p>
+
+            <p>
+                Допустим теперь мы хотим создать новый объект с названием <span
+                    class="text__accent-padding">userProfile</span>, и у этого объекта будут свои
+                свойства.
+            </p>
+
+            <pre class="code__example-block"><code>
+                const userProfile = {
+                      name: name,
+                      postsQty: postsQty,
+                      hasSignedAgreement: false 
+                }
+            </code></pre>
+
+            <span class="main__span-accent_text-1">Что в итоге мы имеем и о чем нужно сказать?</span>
+            <p>
+                Значения в созданном объекте для свойств
+                <span class="text__accent-padding">name</span> и
+                <span class="text__accent-padding">postQty</span> сформированы исходя из значений переменных,
+                объявленных ранее. Вы можете легко использовать переменные в качестве значений для свойств объекта. И в
+                данном примере эти значения переменных, которые были объявлены ранее выступают в качестве значений
+                свойств уже нового объекта. Вот полный пример кода:
+            </p>
+
+            <pre class="code__example-block"><code>
+                const name = 'Bogdan'
+                        const postsQty = 23
+                        
+                        const userProfile = {
+                            name: name,
+                            postsQty: postsQty,
+                            hasSignedAgreement: false 
+                        }
+            </code></pre>
+
+            <p>
+                Более того, в качестве значений свойств объекта можно использовать любые выражения. И сначала JavaScript
+                получит результат того или иного выражения, а после этого этот результат присвоится тому или иному
+                свойству объекта. В данном случае мы просто используем название переменных как выражение.
+            </p>
+
+            <p>
+                Обратите внимание - в данном объекте <span class="text__accent-padding">userProfile</span> свойство
+                <span class="text__accent-padding">name</span> имеет значение переменной <span
+                    class="text__accent-padding">name</span> ., имена
+                совпадают. Совпадает имя свойства с именем переменной. И тоже самое мы видим в переменной
+                <span class="text__accent-padding">postsQty</span>
+            </p>
+
+            <span class="main__text-accent">Примечание!
+                Имя свойства совпадает с именем переменной, которую мы используем для получения значения для этого
+                свойства.
+            </span>
+
+            <p>
+                В JavaScript есть возможность сокращенной записи при формировании таких объектов. Пример:
+            </p>
+            <span class="main__span-accent_text-1">Папка 02. Сокращенный формат записи свойств объекта:</span>
+            <pre class="code__example-block"><code>
+                const name = 'Bogdan'
+                        const postsQty = 23
+                        
+                        const userProfile = {
+                            name,
+                            postsQty,
+                            hasSignedAgreement: false 
+                        }
+            </code></pre>
+
+            <p>
+                Сокращенный формат записи свойств можно применять в объекте, если вы формируете те или иные свойства
+                исходя из переменных, которые были объявлены ранее. Такой формат создания объектов очень рапространен в
+                JavaScript. Обычно часть значений уже известна до формирования объекта, и эти значения были присвоены
+                определенным переменным. И при создании объекта вам нужно всего лишь сослаться на значения этих
+                переменных и использовать их для получения значений свойств объекта.
+            </p>
+
+            <span class="main__text-accent">
+                Примечание!
+                Сокращенные свойства рекомендуется размещать в начале объекта. Потому, что так удобнее читать объект.
+                Чтобы было еще удобнее читать объект, свойства можно сортировать по их длине, короткие сверху и длинные
+                ниже.
+            </span>
+
+            <h3 class="main__title-3">Глобальные объекты</h3>
+            <span class="main__span-accent_text-1">Какие существуют глобальные объекты?</span>
+            <ul>
+                <li>window - присутствует в веб-браузерах</li>
+                <li>global - присутствует в node.js</li>
+            </ul>
+
+            <p>
+                В консоли браузера напишите window
+                Вы получите объект с огромным количеством свойств и методов. Свойство
+                <span class="text__accent-padding">ShadyCSS</span> является объектом, его
+                значение - это объект, в нем присутствуют вложенные свойства. В этом глобальном объекте присутствуют
+                методы и свойства, которые доступны по умолчанию. Можно легко получить доступ к любому из этих свойств,
+                используя точечную запись. Например:
+            </p>
+
+            <pre class="code__example-block"><code>
+                window.innerWidth
+            </code></pre>
+
+            <p>
+                Вводим в консоли браузера <span class="text__accent-padding">window.innerWidth</span> и нажимаем enter ,
+                и таким образом мы получам ответ <span class="text__accent-padding">1834</span>
+            </p>
+
+            <p>
+                Откроем terminal и в интерпретаторе node.js (команда node) напишем <span
+                    class="text__accent-padding">global</span> .
+                Таким образом мы получим доступ к глобальному объекту в node.js ., у этого объекта также есть ряд
+                свойств и методов.
+            </p>
+
+            <p>
+                Глобальные объекты для веб-браузера и для node.js отличаются:
+            </p>
+
+            <ul>
+                <li>для веб-браузера это - <span class="text__accent-padding">window</span> </li>
+                <li>для node.js это - <span class="text__accent-padding">global</span> </li>
+            </ul>
+
+            <p>
+                Чтобы не было путаницы создали унифицированный глобальный объект <span
+                    class="text__accent-padding">globalThis</span>
+            </p>
+
+            <p>
+                Этот глобальный объект доступен и в веб-браузере, и в node.js (в терминале). Соответственно, чтобы
+                получить доступ к свойствам этого глобального объекта нужно использовать точечную запись:
+                <span class="text__accent-padding">globalThis.innerWidth</span>
+            </p>
+
+            <p>
+                Вводим эту команду в веб-браузере и нажимаем enter , получам ответ
+                <span class="text__accent-padding">1834</span> (или другое число, в зависимости
+                от текущих настроек веб-браузера)
+            </p>
+
+            <p>
+                Мы знаем такой объект как <span class="text__accent-padding">console</span> . Так вот этот объект
+                является свойством глобальных объектов <span class="text__accent-padding">window</span> и
+                <span class="text__accent-padding">global</span>
+            </p>
+
+            <p>
+                Если ввести эти команды в консоли веб-браузера и нажать enter, то результат будет одинаковый потому,
+                что <span class="text__accent-padding">console</span> это одно из свойств глобального объекта <span
+                    class="text__accent-padding">window</span>:
+            </p>
+
+            <pre class="code__example-block"><code>
+                console.log(10)
+                window.console.log(10)
+            </code></pre>
+
+            <p>
+                И вы можете получать доступ к свойствам и методам глобального объекта <span
+                    class="text__accent-padding">window</span> , либо используя такой
+                синтаксис:
+            </p>
+            <pre class="code__example-block"><code>
+                window.console.log(10) 
+            </code></pre>
+
+            <p>
+                Либо просто:
+            </p>
+            <pre class="code__example-block"><code>
+                console.log(10) 
+            </code></pre>
+
+            <p>
+                Тоже самое касается глобального объекта <span class="text__accent-padding">global</span>
+            </p>
+
+            <h3 class="main__title-3">Методы объекта</h3>
+            <span class="main__span-accent_text-1">Метод - свойство объекта, значение которого - функция</span>
+            <span class="main__span-accent_text-1">Папка 01. Методы можно вызывать, потому, что функции вызываются.
+                Функции выполняют какие-то задачи и в итоге возвращают значение.</span>
+
+            <pre class="code__example-block"><code>
+                    const myCity = {
+                            city: 'New York',
+                            cityGreeting: function() {
+                                console.log('Greetings!!');
+                            }
+                        }
+                        
+                        myCity.cityGreeting()
+                        // 'Greetings!!' 
+                </code></pre>
+
+            <p>
+                В данном примере у этого объекта <span class="text__accent-padding">myCity</span> есть 2 свойства:
+            </p>
+
+            <ul>
+                <li><span class="text__accent-padding">city</span> - значение этого свойства - Строка</li>
+                <li><span class="text__accent-padding">cityGreeting</span> - значение этого свойства - функция</li>
+            </ul>
+
+            <p>
+                Если у вас есть такой объект с методом, вы можете всегда вызвать такой метод. Вызов происходит вот таким
+                образом:
+            </p>
+            <pre class="code__example-block"><code>
+                myCity.cityGreeting()
+                        // 'Greetings!!'
+            </code></pre>
+
+            <p>
+                Название переменной, далее точка, после точки идет название метода, который вы хотите вызвать. Вызов
+                функции происходит с использованием круглых скобок:
+            </p>
+
+            <pre class="code__example-block"><code>
+                cityGreeting()
+            </code></pre>
+
+            <p>
+                Таким образом мы вызываем метод <span class="text__accent-padding">cityGreeting()</span> , и в
+                результате такого вызова мы увидим <span class="text__accent-padding">Greetings!!</span> в
+                консоли. В данном примере <span class="text__accent-padding">cityGreeting</span> - это метод объекта
+                <span class="text__accent-padding">myCity</span>.
+                А вот <span class="text__accent-padding">city</span> - просто свойство потому, что не является функцией.
+            </p>
+
+            <span class="main__span-accent_text-1">Папка 02. Сокращенный формат записи методов</span>
+            <p>
+                Посмотрим тот же пример, но в этом примере нет ключевого слова <span
+                    class="text__accent-padding">function</span>
+            </p>
+
+            <pre class="code__example-block"><code>
+                const myCity = {
+                            city: 'New York',
+                            cityGreeting() {
+                                console.log('Greetings!!');
+                            }
+                        }
+                        
+                        myCity.cityGreeting()
+                        // 'Greetings!!' 
+            </code></pre>
+
+            <p>
+                При записи объектов, в случае, если у вас значение того или иного свойства - это функция, можно убирать
+                ключевое слово <span class="text__accent-padding">function</span> и ставить круглые скобки просто после
+                названия свойства:
+            </p>
+
+            <pre class="code__example-block"><code>
+                cityGreeting() {
+                    console.log('Greetings!!');
+                }
+            </code></pre>
+
+            <p>
+                Название переменной, круглые скобки, и далее идет тело функции внутри фигурных скобок. То есть такой
+                синтаксис также приведет к созданию метода <span class="text__accent-padding">cityGreeting</span> в
+                объекте <span class="text__accent-padding">myCity</span>
+            </p>
+
+            <span class="main__span-accent_text-1">Методы VS свойства объектов</span>
+            <p>
+                Если сравнить методы и свойства объектов, то вы уже знаете, что свойства не содержат функции, а методы
+                содержат функции как значение. Соответственно для получения доступа к значению свойств вы просто
+                используете точечную запись и имя того или иного свойства, например <span
+                    class="text__accent-padding">city</span>
+            </p>
+
+            <pre class="code__example-block"><code>
+                myCity.city
+            </code></pre>
+
+            <p>Если же вы хотите вызвать метод, то добавляете круглые скобки после названия метода:</p>
+            <pre class="code__example-block"><code>
+                myCity.cityGreeting()
+            </code></pre>
+
+            <p>
+                В первом примере мы получаем доступ к значению свойства <span class="text__accent-padding">city</span>.
+                Во втором примере мы вызываем метод <span class="text__accent-padding"> cityGreeting()</span>,
+                используя круглые скобки:
+            </p>
+
+            <pre class="code__example-block"><code>
+                Пример 1) myCity.city
+                    
+                Пример 2) myCity.cityGreeting()
+            </code></pre>
+
+            <span class="main__text-accent">
+                Примечание! Если вы попытаетесь добавить скобки после <span class="text__accent-padding">city</span>,
+                то вы получите ошибку потому, что <span class="text__accent-padding">city</span> это
+                не функция, а просто свойство, которое содержит строку. Пример:
+            </span>
+
+            <pre class="code__example-block"><code>
+                myCity.city() 
+                // Uncaught TypeError: myCity.city is not a function 
+            </code></pre>
+
+            <p>
+                Вот и вся разница между свойствами и методами объектов. Но на самом деле любой метод также является
+                свойством. То есть объект - это набор свойств, и некоторые из этих свойств называются методами, если их
+                значение - это функция.
+            </p>
+
+            <h3 class="main__title-3">JSON</h3>
+            <span class="main__span-accent_text-1">JSON - это JavaScript Object Notation</span>
+
+            <p>
+                JSON - это формат обмена данными между компьютерами в интернете. Обычно, когда вы загружаете любую
+                веб-страницу, то эта страница обращается к другим серверам для того, чтобы получить данные, которые
+                будут отображены на экране. Такими данными могут быть таблицы стилей CSS, картинки, либо же текстовые
+                данные, которые необходимо отобразить на странице. Например, список постов того или иного пользователя,
+                либо список комментариев, либо профиль пользователя.
+            </p>
+            <span class="main__span-accent_text-1">Пример файла JSON:</span>
+
+            <pre class="code__example-block"><code>
+                {
+                            "userID": 1,
+                            "id": 1,
+                            "title": "Test title",
+                            "status": {
+                              "completed": false
+                            }
+                          }
+            </code></pre>
+
+            <p>
+                В даном примере файла JSON есть набор свойств, и эти свойства очень похожи на свойства в JavaScript
+                объекте, но все свойства находятся между двойными кавычками. Их значения могут быть разных типов.
+                Передача данных между компьютерами в файле JSON происходит в виде строки.
+            </p>
+
+            <span class="main__span-accent_text-1">Конвертация JSON в JavaScript объект.</span>
+            <p>
+                Если сервер вам присылает JSON с набором каких-то данных, например, объект, который описывает
+                пользователя? Вам необходимо распарсить такой JSON и конвертировать его в JavaScript объект для того,
+                чтобы далее отобразить информацию о пользователе на фронтенд странице. Для этого есть встроенный метод,
+                который является методом объекта JSON. Такой метод называется <span
+                    class="text__accent-padding">parse</span>
+            </p>
+            <pre class="code__example-block"><code>
+                 JSON.parse()
+            </code></pre>
+
+            <p>
+                Получив JSON в формате строки от сервера, вы можете передать его как аргумент в вызове метода
+                <span class="text__accent-padding">parse()</span>, и
+                в результате получите JavaScript объект:
+            </p>
+
+            <pre class="code__example-block"><code>
+                {
+                            "userID": 1,
+                            "id": 1,
+                            "title": "Test title",
+                            "status": {
+                              "completed": false
+                            }
+                          }
+            </code></pre>
+
+            <span class="main__span-accent_text-1">Конвертация JavaScript объекта в JSON.</span>
+            <p>
+                Для этого есть обратная функция, которая называется <span
+                    class="text__accent-padding">stringify()</span>
+            </p>
+
+            <pre class="code__example-block"><code>
+                JSON.stringify()
+            </code></pre>
+            <p>
+                Это метод объекта JSON
+            </p>
 
 
         </div><!--main__wrapper-1-->
